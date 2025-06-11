@@ -80,6 +80,8 @@ function checkOS() {
 		if ! command -v virt-what &>/dev/null; then
 			apk update && apk add virt-what
 		fi
+  	elif [[ ${ID_LIKE} == 'fedora' ]]; then
+		OS=fedora
 	else
 		echo "Looks like you aren't running this installer on a Debian, Ubuntu, Fedora, CentOS, AlmaLinux, Oracle or Arch Linux system"
 		exit 1
